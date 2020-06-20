@@ -8,8 +8,8 @@ from . import ureg
 
 @deconstructible
 class UnitValidator:
-    message = _('Enter a valid unit.')
-    code = 'invalid'
+    message = _("Enter a valid unit.")
+    code = "invalid"
 
     def __init__(self, message=None, code=None):
         if message is not None:
@@ -23,6 +23,6 @@ class UnitValidator:
         """
         if value:
             try:
-                getattr(value, ureg)
+                getattr(ureg, value)
             except pint.errors.UndefinedUnitError:
                 raise ValidationError(self.message, code=self.code)

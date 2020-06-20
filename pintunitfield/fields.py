@@ -5,7 +5,6 @@ from . import validators
 
 
 class PintUnitField(models.CharField):
-
     def __init__(self, max_length=50, *args, **kwargs):
         super().__init__(max_length=max_length, *args, **kwargs)
         self.validators.append(validators.UnitValidator())
